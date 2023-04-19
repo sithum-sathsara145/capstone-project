@@ -1,38 +1,180 @@
-.App {
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navigation{
+  display: grid;
+  width: 80vw;
+  max-width: 100vw;
+  grid-template-columns: 1fr 2fr;
+  padding: 25px 100px;
+  z-index: 1;
+  justify-items: center;
+  align-items: center;
+}
+header {
+  display: grid;
+  grid-column: 1;
+justify-items: end;
+}
+nav{
+  display: flex;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul a{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+.hero{
+  background-color: #495E57;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: 80vh;
+}
+.hero-content{
+  padding: 30px 50px;
+}
+.hero img {
+  height: 80vh;
+  grid-column: 2;
+  grid-row: 1;
+}
+.hero h1{
+  color: #F4CE14;
+}
+.hero h2{
+  color: #ffffff;
+}
+.hero p{
+  color: #ffffff;
+}
+.hero button{
+  background-color: #F4CE14;
+  color: #000000;
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+.highlights{
+  padding: 30px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.highlights h2{
+  font-size: 2.5rem;
+  display: inline-block;
+  grid-column: span 2;
+}
+.highlights button{
+  background-color: #F4CE14;
+  color: #000;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  display: inline-block;
+}
+.card-section{
+  display: grid;
+  grid-column: span 3;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 30px 50px;
+}
+.card{
+  background-color: #EDEFEE;
+  margin: 0 20px;
+  border-radius: 10px;
+}
+.card img{
+  width: 25vw;
+  border-radius: 10px 10px 0 0;
+
+}
+.card-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  justify-items: start;
+  column-gap : 90px
+}
+.card-content p{
+  grid-column: span 2;
+}
+.card-content h4{
+  color: #EE9972;
+  justify-content: end;
+}
+.order{
+  grid-column: span 2;
+}
+.testimonials{
+  background-color: #D9D9D9;
+  padding: 100px 50px;
+}
+.testimonials h2{
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.testcard-section{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 30px 50px;
+  gap: 50px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.testcard{
+  background-color: #ffffff;
+  padding: 30px 50px;
 }
+.testcard img{
+  width: 40px;
+}
+.about{
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 50px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+}
+.about img{
+  width: 25vw;
+}
+.about-text h2{
+  font-size: 2.5rem;
+  color: #000000;
+}
+.about-text h3{
+  font-size: 1.5rem;
+  color: #333333;
+}
+footer{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-items: center;
+  background-color: #D9D9D9;
+  padding: 30px 50px;
 }
-
-.App-link {
-  color: #61dafb;
+footer img{
+  width: 5vw;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.doormat_nav ul{
+  list-style: none;
+}
+.doormat_nav a{
+  text-decoration: none;
+  color: #000000;
+}
+.social-media img{
+  width: 30px;
+  margin: 5px;
 }

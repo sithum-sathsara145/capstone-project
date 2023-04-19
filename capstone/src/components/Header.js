@@ -1,7 +1,9 @@
-import logo from "../images/icons_assets/restauranfood.jpg"
+import logo from "../images/icons_assets/Logo.svg"
 function Header() {
     return (
-    <Header><img src={logo} alt="logo"/></Header>
+    <header>
+        <img src={logo} alt="logo"/>
+    </header>
     )
 }
 
