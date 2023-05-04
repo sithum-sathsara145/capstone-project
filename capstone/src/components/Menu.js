@@ -1,6 +1,7 @@
-import lemonDessert from "../images/icons_assets/lemon dessert.jpg"
-import GreekSalad from "../images/icons_assets/greek salad.jpg"
-import Bruchetta from "../images/icons_assets/bruchetta.svg"
+import lemonDessert from "../images/icons_assets/lemon dessert.jpg";
+import GreekSalad from "../images/icons_assets/greek salad.jpg";
+import Bruchetta from "../images/icons_assets/bruchetta.svg";
+
 function Menu(){
     return(
         <div className="highlights">

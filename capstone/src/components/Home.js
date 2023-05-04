@@ -1,6 +1,7 @@
 import Hero from "./Hero"
 import Menu from "./Menu"
 import About from "./About"
+import Testimonials from "./Testimony"
 
 
 export default function Home(){
@@ -8,6 +9,7 @@ export default function Home(){
         <>
         <Hero/>
         <Menu />
+        <Testimonials />
         <About />
         </>
     )

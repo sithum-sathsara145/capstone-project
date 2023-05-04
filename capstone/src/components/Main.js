@@ -3,7 +3,7 @@ import Home from "./Home"
 import Reservations from "./Reservations"
 import Menu from "./Menu"
 import About from "./About"
-import star from "../images/icons_assets/star.png"
+
 
 
 function Main() {
@@ -16,35 +16,7 @@ function Main() {
             <Route path="/About" element={<About/>}/>
         </Routes>
 
-        <div className="testimonials">
-            <h2>Testimonials</h2>
-            <div className="testcard-section">
-                <div className="testcard">
-                    <h3>Rating</h3>
-                    <h4>Name</h4>
-                    <img src={star} alt="star"/>
-                    <p>Review text</p>
-                </div>
-                <div className="testcard">
-                    <h3>Rating</h3>
-                    <h4>Name</h4>
-                    <img src={star} alt="star"/>
-                    <p>Review text</p>
-                </div>
-                <div className="testcard">
-                    <h3>Rating</h3>
-                    <h4>Name</h4>
-                    <img src={star} alt="star"/>
-                    <p>Review text</p>
-                </div>
-                <div className="testcard">
-                    <h3>Rating</h3>
-                    <h4>Name</h4>
-                    <img src={star} alt="star"/>
-                    <p>Review text</p>
-                </div>
-            </div>
-        </div>
+
 
     </main>
     )
