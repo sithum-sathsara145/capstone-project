@@ -178,3 +178,12 @@ footer img{
   width: 30px;
   margin: 5px;
 }
+.reserve{
+  background-color: #495E57;
+  width: 100vw;
+  height: 80vw;
+  padding: 20px;
+}
+.reserve h1{
+  color: #F4CE14;
+}
