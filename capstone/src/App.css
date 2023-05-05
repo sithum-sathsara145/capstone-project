@@ -5,10 +5,8 @@ body{
 }
 .navigation{
   display: grid;
-  width: 80vw;
-  max-width: 100vw;
   grid-template-columns: 1fr 2fr;
-  padding: 25px 100px;
+  padding: 25px 0;
   z-index: 1;
   justify-items: center;
   align-items: center;
@@ -36,7 +34,6 @@ nav ul a{
 }
 .hero{
   background-color: #495E57;
-  width: 100vw;
   display: grid;
   grid-template-columns: 2fr 1fr;
   height: 80vh;
@@ -58,7 +55,7 @@ nav ul a{
 .hero p{
   color: #ffffff;
 }
-.hero button{
+button{
   background-color: #F4CE14;
   color: #000000;
   padding: 20px;
@@ -162,7 +159,7 @@ footer{
   align-items: center;
   justify-items: center;
   background-color: #D9D9D9;
-  padding: 30px 50px;
+  padding: 30px 20px;
 }
 footer img{
   width: 5vw;
@@ -180,10 +177,55 @@ footer img{
 }
 .reserve{
   background-color: #495E57;
-  width: 100vw;
-  height: 80vw;
   padding: 20px;
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
 }
 .reserve h1{
   color: #F4CE14;
+  margin: 0;
+}
+.reserve form{
+  display: grid;
+  align-self: center;
+  padding: 30px 200px;
+  grid-template-columns: 1fr 1fr;
+  max-width: 450px;
+  align-items: center;
+  justify-items: center;
+  gap: 50px
+}
+.reserve form button{
+ grid-column: span 2;
+ align-self: center;
+}
+input[type="date"]{
+  width: 80%;
+  background-color: #F1f1f1;
+  padding: 16px 20px;
+  color: #000000;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+input[type="number"]{
+  width: 80%;
+  background-color: #f1f1f1;
+  padding: 16px 20px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+form label{
+  color: #ffffff;
 }

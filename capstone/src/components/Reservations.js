@@ -1,6 +1,6 @@
 import React from "react"
 
-function Reservations(){
+function Reservations(props){
     //let today = new Date()
     const [time,setTime]= React.useState('18:00');
     const [date,setDate] = React.useState();
@@ -10,8 +10,8 @@ function Reservations(){
         e.preventDefault()
         alert('form submitted')
     }
-    const  availableTimes = ["17:00",'18:00',"19:00","20:00",'21:00','22:00']
-    const timeslots = availableTimes.map((times)=> {return <option>{times}</option>})
+    //const  availableTimes = ["17:00",'18:00',"19:00","20:00",'21:00','22:00']
+    const timeslots = props.availableTimes.map((times)=> {return <option>{times}</option>})
     return(
         <div className="reserve">
             <h1 style={{textAlign: "center"}}>
@@ -48,4 +48,5 @@ function Reservations(){
         </div>
     )
 }
-export default Reservations
+
+export default  Reservations;
