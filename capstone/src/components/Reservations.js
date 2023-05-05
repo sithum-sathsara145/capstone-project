@@ -10,6 +10,10 @@ function Reservations(props){
         e.preventDefault()
         alert('form submitted')
     }
+    const handleDateChange = (e)=>{
+        props.dispatch()
+        return setDate(e.target.value)
+    }
     //const  availableTimes = ["17:00",'18:00',"19:00","20:00",'21:00','22:00']
     const timeslots = props.availableTimes.map((times)=> {return <option>{times}</option>})
     return(
@@ -19,7 +23,7 @@ function Reservations(props){
             </h1>
             <form>
                 <label htmlFor="res-date">Choose Date</label>
-                <input type="date" id="res-date" name="res-date" value={date} onChange={(e)=>{return setDate(e.target.value)}}/>
+                <input type="date" id="res-date" name="res-date" value={date} onChange={handleDateChange}/>
                 <label htmlFor="res-time">Choose time</label>
                 <select id="res-time " value={time} onChange={(e)=>{return setTime(e.target.value)}}>
                 {timeslots}

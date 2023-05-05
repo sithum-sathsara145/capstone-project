@@ -11,7 +11,7 @@ function Main() {
     const updateTimes = (availableTimes) => {
         return availableTimes
     };
-    const initializeTimes = [];
+    const initializeTimes = ['17:00', '18:00','19:00','20:00'];
     const [availableTimes,dispatch] = React.useReducer(updateTimes, initializeTimes)
     return (
     <main>
