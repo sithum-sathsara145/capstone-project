@@ -1,9 +1,9 @@
 import React from "react"
 
 function Reservations(props){
-    //let today = new Date()
+    let today = new Date().toISOString().split("T")[0];
     const [time,setTime]= React.useState('18:00');
-    const [date,setDate] = React.useState();
+    const [date,setDate] = React.useState(today);
     const [guests,setGuests] = React.useState('1')
     const [occasion,setOccasion] = React.useState()
     const eventhandler = (e)=>{
@@ -23,7 +23,7 @@ function Reservations(props){
             </h1>
             <form>
                 <label htmlFor="res-date">Choose Date</label>
-                <input type="date" id="res-date" name="res-date" value={date} onChange={handleDateChange}/>
+                <input type="date" id="res-date" name="res-date" value={date} onChange={handleDateChange} min={today}/>
                 <label htmlFor="res-time">Choose time</label>
                 <select id="res-time " value={time} onChange={(e)=>{return setTime(e.target.value)}}>
                 {timeslots}
