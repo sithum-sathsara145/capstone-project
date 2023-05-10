@@ -1,21 +1,41 @@
 import React from "react"
 
-function Reservations(props){
+function Reservations({availableTimes, dispatch , submitForm}){
+
+    console.log(dispatch)
     let today = new Date().toISOString().split("T")[0];
-    const [time,setTime]= React.useState('18:00');
-    const [date,setDate] = React.useState(today);
-    const [guests,setGuests] = React.useState('1')
-    const [occasion,setOccasion] = React.useState()
-    const eventhandler = (e)=>{
-        e.preventDefault()
-        alert('form submitted')
+    const [formData, setFormData] = React.useState({
+        date: {today},
+        time: "00:00",
+        noOfGuests: "1",
+        occasion: "Birthday"
+    })
+
+    const handleFormChange = (event) => {
+      const { name, value } = event.target
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: value
+      }))
     }
-    const handleDateChange = (e)=>{
-        props.dispatch()
-        return setDate(e.target.value)
+    console.log(formData.date)
+    const handleDateChange = async (event) => {
+      const { name, value } = event.target
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        [name]: value
+      }))
+     dispatch({ type: 'UPDATE_TIMES', payload: value })
+     return
     }
-    //const  availableTimes = ["17:00",'18:00',"19:00","20:00",'21:00','22:00']
-    const timeslots = props.availableTimes?.map((times)=> {return <option>{times}</option>})
+
+    const handleSubmit = (event) => {
+      event.preventDefault()
+      submitForm(formData)
+    }
+
+
+    const timeslots = availableTimes?.map(time => <option key={time}>{time}</option>)
     return(
         <div className="reserve">
             <h1 style={{textAlign: "center"}}>
@@ -23,9 +43,9 @@ function Reservations(props){
             </h1>
             <form>
                 <label htmlFor="res-date">Choose Date</label>
-                <input type="date" id="res-date" name="res-date" value={date} onChange={handleDateChange} min={today}/>
+                <input type="date" id="res-date" name="res-date" value={formData.date} onChange={handleDateChange} min={today} placeholder={formData.date}/>
                 <label htmlFor="res-time">Choose time</label>
-                <select id="res-time " value={time} onChange={(e)=>{return setTime(e.target.value)}}>
+                <select id="res-time " value={formData.time} onChange={handleFormChange}>
                 {timeslots}
                 </select>
                 <label htmlFor="noguests">No of Guests</label>
@@ -34,20 +54,18 @@ function Reservations(props){
                 id="noguests"
                 name="noguests"
                 min={1} max={10}
-                value={guests}
-                onChange={(e)=>{
-                    return setGuests(e.target.value)
-                }}/>
+                value={formData.guests}
+                onChange={handleFormChange}/>
                 <label htmlFor="occasion">Occasion</label>
-                <select 
-                id="occasion" 
-                name="occasion" 
-                value={occasion} 
-                onChange={(e) => { return setOccasion(e.target.value)}}>
+                <select
+                id="occasion"
+                name="occasion"
+                value={formData.occasion}
+                onChange={handleFormChange}>
                     <option>Annivesary</option>
                     <option>Birth day</option>
                 </select>
-                <button id="submitbtn" type="submit" onClick={eventhandler} data-testid="submitbtn">Make a Reservation</button>
+                <button id="submitbtn" type="submit" onClick={handleSubmit} data-testid="submitbtn">Make a Reservation</button>
             </form>
         </div>
     )
