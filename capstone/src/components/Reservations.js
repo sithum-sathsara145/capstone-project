@@ -15,7 +15,7 @@ function Reservations(props){
         return setDate(e.target.value)
     }
     //const  availableTimes = ["17:00",'18:00',"19:00","20:00",'21:00','22:00']
-    const timeslots = props.availableTimes.map((times)=> {return <option>{times}</option>})
+    const timeslots = props.availableTimes?.map((times)=> {return <option>{times}</option>})
     return(
         <div className="reserve">
             <h1 style={{textAlign: "center"}}>
@@ -47,7 +47,7 @@ function Reservations(props){
                     <option>Annivesary</option>
                     <option>Birth day</option>
                 </select>
-                <button type="submit" onClick={eventhandler}>make reservation</button>
+                <button id="submitbtn" type="submit" onClick={eventhandler} data-testid="submitbtn">Make a Reservation</button>
             </form>
         </div>
     )
