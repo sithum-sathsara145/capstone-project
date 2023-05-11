@@ -5,6 +5,7 @@ import Reservations from "./Reservations"
 import Menu from "./Menu"
 import About from "./About"
 import { fetchAPI, submitAPI } from "../Api"
+import Confirmed from "./confirmed"
 
 
 
@@ -54,6 +55,7 @@ return (
             <Route path="/Reservations" element={<Reservations availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/> }/>
             <Route path="/Menu" element={<Menu/>}/>
             <Route path="/About" element={<About/>}/>
+            <Route path="/Confirmed" element={<Confirmed/>}/>
         </Routes>
 
 
