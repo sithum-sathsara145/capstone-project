@@ -1,8 +1,6 @@
 import React from "react"
 
 function Reservations({availableTimes, dispatch , submitForm}){
-
-    console.log(dispatch)
     let today = new Date().toISOString().split("T")[0];
     const [formData, setFormData] = React.useState({
         date: new Date().toISOString().split("T")[0],
@@ -10,7 +8,6 @@ function Reservations({availableTimes, dispatch , submitForm}){
         noOfGuests: "1",
         occasion: "select occasion"
     })
-    console.log(formData)
     const handleFormChange = (event) => {
       const { name, value } = event.target
       setFormData((prevFormData) => ({
@@ -18,7 +15,6 @@ function Reservations({availableTimes, dispatch , submitForm}){
         [name]: value
       }))
     }
-    console.log(formData.date)
     const handleDateChange = async (event) => {
       const { name, value } = event.target
       setFormData((prevFormData) => ({
@@ -41,9 +37,6 @@ function Reservations({availableTimes, dispatch , submitForm}){
             formData.occasion !== "select occasion"
         );
       };
-      console.log(getIsFormValid())
-      console.log()
-
     const timeslots = availableTimes?.map(time => <option key={time}>{time}</option>)
     return(
         <div className="reserve">
