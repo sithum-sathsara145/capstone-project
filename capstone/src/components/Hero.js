@@ -1,4 +1,5 @@
-import heroImage from "../images/icons_assets/restauranfood.jpg"
+import heroImage from "../images/icons_assets/restauranfood.jpg";
+import { Link } from "react-router-dom";
 function Hero(){
     return (
         <div className="hero">
@@ -9,7 +10,9 @@ function Hero(){
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua.
                 </p>
-                <button>Reserve a table</button>
+                <Link to="/Reservations" className="navbar__links">
+                    <button>Reserve a table</button>
+                </Link>
             </div>
             <img src={heroImage} alt="hero"/>
         </div>
